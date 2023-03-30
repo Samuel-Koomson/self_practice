@@ -1,3 +1,5 @@
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
 class Car:
     """A program that manufactures and uses car vehicles"""
     def __init__(self, name, model):
@@ -31,10 +33,15 @@ next_car = Car('Mercedese', 'G-wagon')
 print(f"my second car was {next_car.name} {next_car.model}.")
 
 #in OOP naming conventions, capitalised varaibles are considered classes while lower cased variables are considered instances or objects
+first_car.model = 'specification'
+print(first_car.model) #direct change
+print(next_car.model)
+#when values are changed for attributes, the changes affect only the instances in question.
 
 first_car.move()
 next_car.stop()
 first_car.mileage(5, 100)
+
 
 #another example
 class Restaurant:
@@ -58,6 +65,8 @@ print(f'Restaurant name {restaurant.name}.')
 print(f'Restaurant meal {restaurant.cuisine}.')
 
 old_restaurant = Restaurant('old_location', 'european')
+old_restaurant.serving = 10
+print (old_restaurant.serving)
 
 restaurant.describe_restaurant()
 old_restaurant.open_restaurant()
@@ -90,6 +99,9 @@ user3.describe_user()
 user1.greet_user()
 user2.greet_user()
 user3.greet_user()
+
+user1.age = 54
+print(user1.age)
 print('\n')
 
 class Family:
@@ -105,7 +117,11 @@ class Family:
     
     def residence(self, house):
         print(f"Family lives in {house} house")
-        
+    
+    def fada1(self, expenditure):
+        self.budget = expenditure
+    print(f"budget updated to {'expenditure'} in the family")
+    
 father = Family( 'Daddy', 'Accra', 'BMW', 5000)
 print({father.members}, {father.home}, {father.vehicles}, {father.budget})
 
@@ -139,7 +155,31 @@ print(c_program.beginning)
 
 #concepts perfect to this point, the outstanding issues are syntaxes
 #How to modify attribute values
+
 java = Language('complex', 'better than c', 'dynamic')
 java.errors = 'reduced'
 java.clean_code('Good job')
+c_program.errors = 'reduced'
+print(c_program.beginning)
+c_program.clean_code('Good job')
+#The above codes modify the attributes of an instance by direct assignment.
+def update_jave(self, correction):
+    self.errors = correction
+print(f"errors have been modified to {'data'} corrections")
 
+#INHERITANCE
+class Used_Cars(Car):
+    """This creates a new class of cars that deals with second-hand used cars"""
+    def __init__(self, name, model, year):
+        """Initializes attributes of the parent class to the child, this allows the child class to inherit parts or all of the attributes, methods and instances of the parent"""
+        super().__init__(name, model)
+        self.maintenance = 'monthly'
+    def schedule_maintenance(self, date):
+        if self.maintenance == 30 and date >= self.maintenanc:
+            return self.maintenance
+print(f"You are due for maintenance, schedule {31} now")
+home_user = Used_Cars.schedule_maintenance()   
+#the super initialisation allows for the child class to call the parent method.
+        
+refurb_car = Used_Cars('benz', 'citron', 1995)
+print(refurb_car.move())
