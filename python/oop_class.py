@@ -112,4 +112,34 @@ print({father.members}, {father.home}, {father.vehicles}, {father.budget})
 #I really had a tough time figuring out how to call the attributes of the class to be printed unto the console using instances. 
 father.direct_members('Daddy', 'Ama')
 father.residence('green')
+print('\n')
+
+class Language:
+    """Develops family of programming languages"""
+    def __init__(self, syntax, errors, types):
+        self.syntax = syntax
+        self.errors = errors
+        self.types = types
+        self.beginning = 'start with C'
+    
+    def characters(self, do, dont):
+        if do == 'accept': print('Go ahead')
+        else:
+            if dont == 'unaccepted': print("there's an error")
+    
+    def clean_code(self, serious):
+        print(f" Your code is all clean and nice {serious}.")
+
+c_program = Language('hard', 'error ridden', 'strict data type')
+print({c_program.syntax}, {c_program.errors}, {c_program.types})
+
+c_program.characters('accept', 'reject')
+c_program.clean_code('Good job')
+print(c_program.beginning)
+
+#concepts perfect to this point, the outstanding issues are syntaxes
+#How to modify attribute values
+java = Language('complex', 'better than c', 'dynamic')
+java.errors = 'reduced'
+java.clean_code('Good job')
 
