@@ -72,6 +72,15 @@ restaurant.describe_restaurant()
 old_restaurant.open_restaurant()
 old_restaurant.order(3)
 
+class Ice_cream_Stand(Restaurant):
+    def __init__Ice_cream_Stand(self, restaurant_name, cuisine_type, flavor):
+        super().__init__(restaurant_name, cuisine_type)
+        self.flavor = flavor
+    def sales_point(self):
+        print('Ice cream is sold right here')
+buyer = Ice_cream_Stand('strawberry', 'flavor')
+buyer.sales_point()
+
 
 class Users:
     """Program depicts users of a software"""
@@ -178,7 +187,7 @@ class Used_Cars(Car):
         if self.maintenance == 30 and date >= self.maintenanc:
             return self.maintenance
 print(f"You are due for maintenance, schedule {31} now")
-home_user = Used_Cars.schedule_maintenance()   
+home_user = Used_Cars.schedule_maintenance('self', 31)   
 #the super initialisation allows for the child class to call the parent method.
         
 refurb_car = Used_Cars('benz', 'citron', 1995)
